@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="menu-tiny">
+	<a href='https://www.facebook.com/ClinicaMontemar' class='button-tiny'>
+		<img src="gfx\fb.png" width="24px">
+	</a>
+	<a href='https://www.instagram.com/clinicamontemar/' class='button-tiny'>
+		<img src="gfx\ig.png" width="24px">
+	</a>
+</div>		
+
+<center>
+<img src="gfx/bar.jpg" alt="Bar">
+
+<div class="title">
+	
+	<div class="item">
+		<img src="gfx/logo.png" alt="Logo">
+	</div>
+	
+	<div class="item">
+		(55) 224 4610 <br>
+		(+56) 962384196 <br>
+	</div>
+
+	<div class="item">
+		recepcion@clinicamontemar.cl <br>
+	</div>
+	
+	<div class="item">
+		Bernardo O'higgins #1338, Oficina 1101 <br>
+		Antofagasta - Chile <br>
+	</div>
+
+</div>
+</center>
+</body>
+<center>
+
+<div class="menu">
+<a href='index.html' class='button'>Home</a>
+<a href='us.html' class='button'>Nosotros</a>
+<a href='special.html' class='button'>Especialidades</a>
+<a href='bonus.html' class='button'>Beneficiarios</a>
+<a href='comerce.html' class='button'>Area Comercial</a>
+<a href='agenda.html' class='button'>Agendar Hora</a>
+<a href='contact.html' class='button'>Contacto</a>
+</div>
+
+<h2>Especialidades</h2>
+
+<p>Conoce nuestras especialidades, siempre enfocados en brindar un servicio personalizado.</p>
+
+<div class="side-by-side">
+	<div class="tile-container">
+		<div class="tile" >
+			<img src="gfx/orto.jpg" alt="">
+			<div class="content">
+				<h3>Ortodoncia</h3>
+				<p align="justify">
+					Es el tratamiento de las malposiciones dentarias con aparatos fijos o removibles. 
+					Cuyo objetivo final es restaurar la posición correcta de los dientes para que cumplan 
+					su función adecuada.
+				</p>
+			</div>
+		</div>
+		<div class="tile" >
+			<img src="gfx/peri.jpg" alt="">
+			<div class="content">
+				<h3>Periodoncia</h3>
+				<p align="justify">
+					Tratamiento de las enfermedades de las encías y tejidos duros que rodean al diente.
+				</p>
+			</div>
+		</div>
+		<div class="tile" >
+			<img src="gfx/esteti.jpg" alt="">
+			<div class="content">
+				<h3>Estética</h3>
+				<p align="justify">
+					Especialidad que soluciona problemas relacionados con la salud bucal y la armonía estética de la 
+					boca en su totalidad, de manera rápida y sin traumatismos.
+				</p>
+			</div>
+		</div>
+		<div class="tile" >
+			<img src="gfx/endo.jpg" alt="">
+			<div class="content">
+				<h3>Endodoncia</h3>
+				<p align="justify">
+				Tratamiento de los problemas que afectan al tejido interno del diente (nervio). También 
+				es llamado tratamiento de conducto.
+				</p>
+			</div>
+		</div>
+		<div class="tile" >
+			<img src="gfx/odnpe.jpg" alt="">
+			<div class="content">
+				<h3>Odontopediatría</h3>
+				<p align="justify">
+				Especialidad que se ocupa de los problemas dentales en niños.
+				</p>
+			</div>
+		</div>
+		<div class="tile" >
+			<img src="gfx/odnge.jpg" alt="">
+			<div class="content">
+				<h3>Odontología General</h3>
+				<p align="justify">
+				Tratamientos encaminados a solucionar los problemas primarios que tienen que ver con la boca, dientes
+				y otras estructuras. Representa el primer contacto del paciente con el odontólogo.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="tile-container">
+		<div class="tile">
+			<div class="content">
+				<h3>Atiendase con nosotros</h3>
+				<p>
+					Al enviar el formulario, se le redirigira hacia su correo para hacer la solicitud.
+				</p>
+				<div class="container">
+					<form id="form">
+						<input type="text" name="name" placeholder="Nombre">
+						<input type="email" name="mail" placeholder="Correo">
+						<input type="text" name="phone" placeholder="Telefono">
+						<input type="special" name="special" placeholder="Especialización">
+						<input type="date" name="date" placeholder="Fecha">
+						<input type="time" name="time" placeholder="Hora">
+						<textarea id="message" name="msg" rows="10" placeholder="Motivo de consulta"></textarea>
+						<button type="submit">Enviar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	console.log("Funcionando!");
+
+	var form = document.getElementById("form");
+	form.addEventListener("submit", function(e)
+	{
+		e.preventDefault();
+		console.log("Se hizo click!!");
+
+		var datos = new FormData(form);
+
+		name = datos.get("name");
+		mail = datos.get("mail");
+		phone = datos.get("phone");
+		special = datos.get("special");
+		date = datos.get("date");
+		time = datos.get("time");
+		msg = datos.get("msg");
+
+		url = 'mailto:dr.miguel.soto@clinicamontemar.cl?subject=Solicitud de hora&';
+		
+		body = "body=";
+		body = body.concat("De: ", name, "%0D%0A");
+		body = body.concat("Email: ", mail, "%0D%0A");
+		body = body.concat("Telefono: ", phone, "%0D%0A");
+		body = body.concat("Fecha: ", date, "%0D%0A");
+		body = body.concat("Hora: ", time, "%0D%0A");
+		body = body.concat("Departamento: ", special, "%0D%0A");
+
+		body = body.concat("%0D%0AMensaje:%0D%0A", msg, "%0D%0A");
+		//console.log(body);
+
+		url = url.concat(body);
+		console.log(url);
+		
+		//window.open('mailto:dr.miguel.soto@clinicamontemar.cl?subject=Solicitud&body=Probando');
+		window.open(url);
+	});
+</script>
+
+
+<h3>Nuestro Equipo de Profesionales</h3>
+<p>
+Contamos con profesionales de gran experiencia en técnicas y procedimientos necesarios
+para brindar el mejor servicio.
+</p>
+
+<div class="accordion">
+	<div class="item">
+		<img src="gfx/miguel-soto.jpg" alt="" style="max-width: 200px;">
+	</div>
+	<div class="item">
+		<img src="gfx/ximena-delgado.jpg" alt="" style="max-width: 200px;">
+	</div>
+	<div class="item">
+		<img src="gfx/martin-flores.jpg" alt="" style="max-width: 200px;">
+	</div>
+	<div class="item">
+		<img src="gfx/naddaf.jpg" alt="" style="max-width: 200px;">
+	</div>
+</div>
+
+</center>
+
+<footer>
+<div class="footnote">
+<img src="gfx/logo-dark.png" alt="Bar">
+<br>
+<br>
+Siempre a la vanguardia, en Montemar nuestro compromiso es entregar a nuestros pacientes una atención y 
+servicio de excelencia, fundamentada en la alta capacitación de nuestros profesionales y elevados estándares 
+en nuestros procesos.
+
+<br>
+<br>
+<br>
+<br>
+
+<h4>
+Contacto
+</h4>
+
+<div class="contact">
+(55) 224 4610<br>
+(+569) 6238 4196<br>
+recepcion@clinicamontemar.cl<br>
+Bernardo O'higgins #1338, Oficina 1101<br>
+Antofagasta - Chile.<br>
+</div>
+
+<h4>
+Menú
+</h4>
+
+<div class="foot-menu">
+<a href='index.html' class='button'>Home</a>
+<a href='us.html' class='button'>Nosotros</a>
+<a href='special.html' class='button'>Especialidades</a>
+<a href='comerce.html' class='button'>Area Comercial</a>
+<a href='agenda.html' class='button'>Agendar Hora</a>
+<a href='contact.html' class='button'>Contacto</a>
+</div>
+
+</div>
+</footer>
+</html>
