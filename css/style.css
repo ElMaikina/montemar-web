@@ -275,7 +275,7 @@ footer {
 .content {
 	text-justify: left;
 }
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 	.side-by-side{
 		flex-direction: column;
 		align-items: center;
