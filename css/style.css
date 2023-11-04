@@ -46,8 +46,20 @@ span{
     font-size: 100%;
 }
 
+.line {
+    width: 100%;
+    height: 100vh;
+    background-image: "gfx/bar.jpg";
+    background-repeat: repeat-x;
+    background-size: cover;
+}
+
 .menu {
     background-color: #2D2D2D;
+	overflow: auto;
+	scroll-behavior: smooth;
+	white-space: nowrap;
+	max-height: 80px;
 }
 
 .menu-tiny {
@@ -204,6 +216,7 @@ footer {
     padding: 20px;
 	display: flex;
 	justify-content: center;
+	overflow: auto;
 }
 
 .accordion .item {
@@ -213,13 +226,14 @@ footer {
 
 .title {
     padding: 10px 10px;
-	display: flex;
 	align-items: center;
 	justify-content: center;
+    flex-wrap: wrap;
+	display: flex;
 }
 
 .title .item {
-	padding: 25px;
+	padding: 10px;
 	text-justify: left;
     font-family: sans-serif;
 }
@@ -232,8 +246,7 @@ footer {
 .tile-container .tile {
 	display: flex;
 	width: 500px;
-	height: 100px;
-	padding: 30px;
+	padding: 10px;
 	align-items: center;
 	text-justify: left;
 }
@@ -243,7 +256,6 @@ footer {
     font-family: sans-serif;
 	justify-content: left;
 	font-size: 150%;
-	padding: 30px;
 }
 
 .tile-container .tile .content{
@@ -251,15 +263,25 @@ footer {
     font-family: sans-serif;
 	text-justify: left;
 	font-size: 90%;
-	padding: 30px;
+	padding: 15px;
 }
 .side-by-side{
-	width: 1000px;
 	display: flex;
     float: center;
 	align-items: center;
+	justify-content: center;
 }
 
 .content {
 	text-justify: left;
+}
+@media (max-width: 600px) {
+	.side-by-side{
+		flex-direction: column;
+		align-items: center;
+	}
+	
+	.content {
+		text-justify: center;
+	}
 }
